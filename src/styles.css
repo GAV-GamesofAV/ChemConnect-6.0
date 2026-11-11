@@ -1,0 +1,245 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * CHEMISTRECREATE design system — "watercolor lab notebook".
+ * Parchment paper, navy ink, poster red, slate pills, amber + leaf accents.
+ */
+
+@theme inline {
+  --font-display: "Lilita One", "Trebuchet MS", sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-script: "Dancing Script", cursive;
+  --font-sans: "Lora", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-pill: var(--pill);
+  --color-pill-foreground: var(--pill-foreground);
+  --color-amber: var(--amber);
+  --color-leaf: var(--leaf);
+  --color-wash: var(--wash);
+  --color-ink-soft: var(--ink-soft);
+
+  --shadow-ink: var(--shadow-ink);
+  --shadow-ink-lg: var(--shadow-ink-lg);
+  --shadow-paper: var(--shadow-paper);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Paper */
+  --background: oklch(0.955 0.018 88);
+  --paper: oklch(0.975 0.012 90);
+  --paper-deep: oklch(0.925 0.025 85);
+
+  /* Ink */
+  --foreground: oklch(0.31 0.06 248);
+  --ink-soft: oklch(0.45 0.05 245);
+
+  --card: oklch(0.975 0.012 90);
+  --card-foreground: oklch(0.31 0.06 248);
+  --popover: oklch(0.975 0.012 90);
+  --popover-foreground: oklch(0.31 0.06 248);
+
+  /* Navy (CHEMISTRECREATE wordmark) */
+  --primary: oklch(0.39 0.08 245);
+  --primary-foreground: oklch(0.97 0.012 90);
+
+  /* Slate pill (poster event cards) */
+  --pill: oklch(0.8 0.018 232);
+  --pill-foreground: oklch(0.33 0.06 245);
+
+  --secondary: oklch(0.9 0.02 230);
+  --secondary-foreground: oklch(0.33 0.06 245);
+  --muted: oklch(0.925 0.025 85);
+  --muted-foreground: oklch(0.47 0.045 245);
+
+  /* Poster red (CHEM CONNECT title) */
+  --accent: oklch(0.5 0.16 30);
+  --accent-foreground: oklch(0.975 0.012 90);
+
+  --amber: oklch(0.73 0.14 72);
+  --leaf: oklch(0.58 0.07 122);
+  --wash: oklch(0.62 0.07 240);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.83 0.03 230);
+  --input: oklch(0.83 0.03 230);
+  --ring: oklch(0.39 0.08 245);
+
+  --shadow-ink: 0 6px 0 -2px color-mix(in oklab, var(--foreground) 85%, transparent);
+  --shadow-ink-lg: 0 9px 0 -2px color-mix(in oklab, var(--foreground) 85%, transparent);
+  --shadow-paper: 0 1px 0 color-mix(in oklab, var(--paper) 80%, transparent) inset,
+    0 18px 40px -24px color-mix(in oklab, var(--foreground) 45%, transparent);
+
+  --chart-1: oklch(0.39 0.08 245);
+  --chart-2: oklch(0.5 0.16 30);
+  --chart-3: oklch(0.73 0.14 72);
+  --chart-4: oklch(0.58 0.07 122);
+  --chart-5: oklch(0.62 0.07 240);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-serif);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--amber) 45%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Parchment: soft watercolor washes around the edges + fine paper grain */
+@utility paper-texture {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 60% 40% at 0% 0%, color-mix(in oklab, var(--wash) 32%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 100% 8%, color-mix(in oklab, var(--wash) 26%, transparent), transparent 70%),
+    radial-gradient(ellipse 70% 30% at 50% 100%, color-mix(in oklab, var(--wash) 22%, transparent), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Lab-notebook grid */
+@utility lab-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--wash) 14%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--wash) 14%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Watercolor illustrations are painted on white: multiply lets the paper show through */
+@utility ink-blend {
+  mix-blend-mode: multiply;
+}
+
+/* Poster-style slate pill card */
+@utility pill-card {
+  background: color-mix(in oklab, var(--pill) 92%, var(--paper));
+  color: var(--pill-foreground);
+  border-radius: 9999px;
+}
+
+@utility text-balance-safe {
+  text-wrap: balance;
+}
+
+/* Scroll reveal */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1.5deg); }
+}
+
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+
+@utility animate-float-slow {
+  animation: float-slow 9s ease-in-out infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility animate-orbit {
+  animation: orbit-spin 60s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
