@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import logo from "@/assets/chemistrecreate_logo.png.asset.json";
+import logo from "@/assets/logo.png";
 import glassware from "@/assets/glassware-row.jpg";
 import dna from "@/assets/dna-helix.jpg";
 import atom from "@/assets/atom-molecule.jpg";
@@ -39,7 +39,7 @@ export function Hero() {
           <div className="relative mx-auto w-fit">
             <span className="absolute inset-[-10px] rounded-full border border-dashed border-primary/40 animate-orbit" aria-hidden="true" />
             <img
-              src={logo.url}
+              src={logo}
               alt={`${club.name} — ${club.motto}`}
               width={1080}
               height={1050}

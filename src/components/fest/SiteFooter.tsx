@@ -1,4 +1,4 @@
-import logo from "@/assets/chemistrecreate_logo.png.asset.json";
+import logo from "@/assets/logo.png";
 import glassware from "@/assets/glassware-row.jpg";
 import { club, fest, navLinks, socials } from "@/data/fest";
 
@@ -17,7 +17,7 @@ export function SiteFooter() {
       <div className="bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.3fr_1fr_1fr]">
           <div className="flex items-start gap-4">
-            <img src={logo.url} alt={`${club.name} logo`} width={72} height={70} loading="lazy" className="h-18 w-18 shrink-0 rounded-full bg-paper object-contain p-0.5" />
+            <img src={logo} alt={`${club.name} logo`} width={72} height={70} loading="lazy" className="h-18 w-18 shrink-0 rounded-full bg-paper object-contain p-0.5" />
             <div>
               <p className="font-display text-2xl uppercase tracking-wide">{club.name}</p>
               <p className="font-script text-xl text-amber">{club.motto}</p>

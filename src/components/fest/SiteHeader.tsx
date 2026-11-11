@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/chemistrecreate_logo.png.asset.json";
+import logo from "@/assets/logo.png";
 import { navLinks, club } from "@/data/fest";
 import { cn } from "@/lib/utils";
 
@@ -29,7 +29,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <a href="#top" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <img
-            src={logo.url}
+            src={logo}
             alt={`${club.name} logo`}
             width={40}
             height={39}

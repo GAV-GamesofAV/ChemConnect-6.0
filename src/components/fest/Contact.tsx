@@ -1,5 +1,5 @@
 import { Mail, MessageCircle, Phone, UserRound } from "lucide-react";
-import logo from "@/assets/chemistrecreate_logo.png.asset.json";
+import logo from "@/assets/logo.png";
 import { club, contacts, type Person } from "@/data/fest";
 import { Reveal, SectionHeading } from "./primitives";
 
@@ -84,7 +84,7 @@ export function Contact() {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
             <div className="rounded-2xl border-2 border-primary bg-paper p-6 shadow-paper">
-              <img src={logo.url} alt={`${club.name} logo`} width={80} height={78} loading="lazy" className="h-20 w-20 rounded-full object-contain" />
+              <img src={logo} alt={`${club.name} logo`} width={80} height={78} loading="lazy" className="h-20 w-20 rounded-full object-contain" />
               <h3 className="mt-4 font-display text-2xl uppercase tracking-wide text-primary">{club.name}</h3>
               <p className="text-sm italic text-muted-foreground">{club.clubLabel} · {club.school}</p>
               <p className="mt-4 font-serif text-lg italic text-primary">{club.motto}</p>
