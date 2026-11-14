@@ -24,7 +24,7 @@ export const fest = {
   intro:
     "The annual chemistry festival of the Chemistrecreate Chemistry Club — a celebration of experiments, ideas and curious minds. Full details are on their way.",
   dates: "Dates to be announced",
-  venue: "MP Hall",
+  venue: "School Premises",
 };
 
 export const about = {
@@ -36,17 +36,26 @@ export const about = {
   facts: [
     { label: "Edition", value: "Chem Connect 6.0" },
     { label: "Dates", value: "To be announced" },
-    { label: "Venue", value: "MP Hall" },
+    { label: "Venue", value: "School Premises" },
   ],
 };
 
 export type EventCategory = "Competition" | "Activity" | "Experiment" | "Exhibition";
 
-export const eventCategories: { id: EventCategory; label: string; symbol: string; blurb: string}[] = [
-  { id: "Competition", label: "Competitions", symbol: "Cp", blurb: "Test your knowledge and skill." },
+export const eventCategories: {
+  id: EventCategory;
+  label: string;
+  symbol: string;
+  blurb: string;
+}[] = [
+  {
+    id: "Competition",
+    label: "Competitions",
+    symbol: "Cp",
+    blurb: "Test your knowledge and skill.",
+  },
   { id: "Activity", label: "Activities", symbol: "Ac", blurb: "Play, solve and participate." },
   { id: "Experiment", label: "Experiments", symbol: "Ex", blurb: "Hands-on chemistry, live." },
-  { id: "Exhibition", label: "Exhibitions", symbol: "Eh", blurb: "Projects, models and displays." },
 ];
 
 export type FestEvent = {
@@ -59,12 +68,48 @@ export type FestEvent = {
 
 /** Placeholder events — mirror the six slots on the poster. Edit freely. */
 export const events: FestEvent[] = [
-  { name: "Event 1", category: "Competition", time: "Time", venue: "Venue TBA", description: "Description to be added." },
-  { name: "Event 2", category: "Competition", time: "Time", venue: "Venue TBA", description: "Description to be added." },
-  { name: "Event 3", category: "Activity", time: "Time", venue: "Venue TBA", description: "Description to be added." },
-  { name: "Event 4", category: "Experiment", time: "Time", venue: "Venue TBA", description: "Description to be added." },
-  { name: "Event 5", category: "Experiment", time: "Time", venue: "Venue TBA", description: "Description to be added." },
-  { name: "Event 6", category: "Exhibition", time: "Time", venue: "Venue TBA", description: "Description to be added." },
+  {
+    name: "Event 1",
+    category: "Competition",
+    time: "Time",
+    venue: "School Premises",
+    description: "Description to be added.",
+  },
+  {
+    name: "Event 2",
+    category: "Competition",
+    time: "Time",
+    venue: "School Premises",
+    description: "Description to be added.",
+  },
+  {
+    name: "Event 3",
+    category: "Activity",
+    time: "Time",
+    venue: "School Premises",
+    description: "Description to be added.",
+  },
+  {
+    name: "Event 4",
+    category: "Experiment",
+    time: "Time",
+    venue: "School Premises",
+    description: "Description to be added.",
+  },
+  {
+    name: "Event 5",
+    category: "Experiment",
+    time: "Time",
+    venue: "School Premises",
+    description: "Description to be added.",
+  },
+  {
+    name: "Event 6",
+    category: "Exhibition",
+    time: "Time",
+    venue: "School Premises",
+    description: "Description to be added.",
+  },
 ];
 
 export type ScheduleDay = {
@@ -87,32 +132,69 @@ export const importantInfo: { label: string; value: string }[] = [
   { label: "Venue", value: "MP Hall" },
 ];
 
-export type Person = { name: string; role: string; email?: string; phone?: string };
+export type TeamTier = "leadership" | "coordinator" | "co-coordinator" | "member";
+
+export type Person = {
+  name: string;
+  role: string;
+  className?: string;
+  image?: string;
+  email?: string;
+  phone?: string;
+  tier?: TeamTier;
+};
 
 export const contacts = {
-  /** Add contact details only after getting the person's permission. */
   clubEmail: "",
+
   president: {
-    name: "President name to be added",
+    name: "Kriti",
     role: "Club President",
+    className: "Class XII",
+    tier: "leadership",
+    image: "/members/president.jpg",
     email: "",
     phone: "",
   } as Person,
+
   vicePresident: {
-    name: "Vice President name to be added",
+    name: "Gaurav",
     role: "Club Vice President",
+    className: "Class XI",
+    tier: "leadership",
+    image: "/members/vice-president.jpg",
     email: "",
     phone: "",
   } as Person,
+
+  coordinators: [
+    { name: "Ronak Kumar", role: "Planning Coordinator", tier: "coordinator" },
+    { name: "Ayush", role: "Event Coordinator", tier: "coordinator" },
+    { name: "Alok", role: "Tech Coordinator", tier: "coordinator" },
+    { name: "Akshra", role: "Decoration and Record Coordinator", tier: "coordinator" },
+  ] as Person[],
+
+  coCoordinators: [
+    { name: "Anamika", role: "Planning Co-coordinator", tier: "co-coordinator" },
+    { name: "Prince Rajbhar", role: "Event Co-coordinator", tier: "co-coordinator" },
+    { name: "Prince Kumar", role: "Tech Co-coordinator", tier: "co-coordinator" },
+    { name: "Khushi", role: "Decoration and Record Co-coordinator", tier: "co-coordinator" },
+  ] as Person[],
+
   members: [
-    { name: "Member name to be added", role: "Club Member" },
-    { name: "Member name to be added", role: "Club Member" },
-    { name: "Member name to be added", role: "Club Member" },
+    { name: "Bhavya", role: "Club Member", tier: "member" },
+    { name: "Saubhagya", role: "Club Member", tier: "member" },
+    { name: "Priyanshu Kumar", role: "Club Member", tier: "member" },
+    { name: "Naitik", role: "Club Member", tier: "member" },
+    { name: "Ritik Kumar", role: "Club Member", tier: "member" },
   ] as Person[],
 };
 
 /** Add social links like { label: "Instagram", url: "https://instagram.com/…" }. Empty = hidden. */
-export const socials: { label: "Instagram" | "YouTube" | "Facebook" | "Website" | "X"; url: string }[] = [];
+export const socials: {
+  label: "Instagram" | "YouTube" | "Facebook" | "Website" | "X";
+  url: string;
+}[] = [];
 
 export const navLinks = [
   { id: "about", label: "About" },

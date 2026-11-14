@@ -37,7 +37,7 @@ function Index() {
         <Hero />
         <BondDivider formula="C₆H₆" />
         <About />
-        <BondDivider formula="NaCl → Na⁺ + Cl⁻" />
+        <BondDivider formula="C₆H₆" />
         <Events />
         <Schedule />
         <BondDivider formula="H₂O" />
