@@ -133,7 +133,7 @@ export const events: FestEvent[] = [
     time: "Time TBA",
     venue: "School Premises",
     description: "Design a test tube",
-    details: "Show your creativity, decorate the test tube"
+    details: "Show your creativity, decorate the test tube",
   },
   {
     name: "Chem Escape",
