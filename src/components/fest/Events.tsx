@@ -258,8 +258,17 @@ function EventDetailsModal({ event, onClose }: { event: FestEvent; onClose: () =
 export function Events() {
   const [filter, setFilter] = useState<EventCategory | "All">("All");
   const [selectedEvent, setSelectedEvent] = useState<FestEvent | null>(null);
+
   const shown = filter === "All" ? events : events.filter((e) => e.category === filter);
 
+  const daySections = [
+    { day: 1 as const, title: "Day 1", subtitle: "First Day of Chem Connect 6.0" },
+    { day: 2 as const, title: "Day 2", subtitle: "Second Day of Chem Connect 6.0" },
+  ];
+
+  const preFestEvents = shown.filter((e) => e.preFest);
+
+  const unassignedEvents = shown.filter((e) => !e.preFest && (!e.days || e.days.length === 0));
   return (
     <section id="events" className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28">
       <SectionHeading
@@ -268,9 +277,10 @@ export function Events() {
         tone="red"
         eyebrow="events & activities"
         title="The line-up"
-        intro="Competitions, activities, experiments and exhibitions. Tap a category to filter."
+        intro="Two days of competitions, activities, experiments and exhibitions. Tap an event to explore its details."
       />
 
+      {/* Category filters */}
       <Reveal>
         <div
           role="tablist"
@@ -284,6 +294,7 @@ export function Events() {
             const active = filter === c.id;
             const count =
               c.id === "All" ? events.length : events.filter((e) => e.category === c.id).length;
+
             return (
               <button
                 key={c.id}
@@ -301,6 +312,7 @@ export function Events() {
                     !active && "border-primary/30",
                   )}
                 />
+
                 <span
                   className={cn(
                     "mt-2 block text-center font-mono text-[0.55rem] uppercase tracking-wider sm:text-xs",
@@ -309,6 +321,7 @@ export function Events() {
                 >
                   {c.label}
                 </span>
+
                 <span className="sr-only">{c.blurb}</span>
               </button>
             );
@@ -316,19 +329,97 @@ export function Events() {
         </div>
       </Reveal>
 
-      <div className="mt-10 grid gap-x-8 gap-y-3 md:grid-cols-2">
-        {shown.map((e, i) => (
-          <Reveal key={e.name + i} delay={(i % 2) * 90}>
-            <EventPill event={e} flip={i % 2 === 1} onClick={() => setSelectedEvent(e)} />
-          </Reveal>
-        ))}
-      </div>
-      {shown.length === 0 && (
-        <p className="mt-10 text-center italic text-muted-foreground">
-          Events in this category will be announced soon.
-        </p>
+      {/* Pre-Fest Events */}
+      {preFestEvents.length > 0 && (
+        <div className="mt-14">
+          <div className="mb-6 flex items-center gap-4">
+            <div className="shrink-0">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+                Before the fest
+              </span>
+              <h3 className="font-serif text-3xl font-semibold italic text-primary sm:text-4xl">
+                Pre-Fest Events
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Special activities conducted before Chem Connect 6.0.
+              </p>
+            </div>
+            <div className="h-px flex-1 bg-primary/20" />
+          </div>
+
+          <div className="grid gap-x-8 gap-y-3 md:grid-cols-2">
+            {preFestEvents.map((e, i) => (
+              <Reveal key={`${e.name}-prefest-${i}`}>
+                <EventPill event={e} flip={i % 2 === 1} onClick={() => setSelectedEvent(e)} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
       )}
 
+      {/* Day-wise event sections */}
+      {daySections.map((section) => {
+        const dayEvents = shown.filter((e) => e.days?.includes(section.day));
+
+        return (
+          <div key={section.day} className="mt-14">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="shrink-0">
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+                  Chem Connect 6.0
+                </span>
+                <h3 className="font-serif text-3xl font-semibold italic text-primary sm:text-4xl">
+                  {section.title}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">{section.subtitle}</p>
+              </div>
+
+              <div className="h-px flex-1 bg-primary/20" />
+            </div>
+
+            {dayEvents.length > 0 ? (
+              <div className="grid gap-x-8 gap-y-3 md:grid-cols-2">
+                {dayEvents.map((e, i) => (
+                  <Reveal key={`${e.name}-${section.day}-${i}`} delay={(i % 2) * 90}>
+                    <EventPill event={e} flip={i % 2 === 1} onClick={() => setSelectedEvent(e)} />
+                  </Reveal>
+                ))}
+              </div>
+            ) : (
+              <p className="rounded-xl border border-dashed border-border py-8 text-center text-sm italic text-muted-foreground">
+                Events for this day will be announced soon.
+              </p>
+            )}
+          </div>
+        );
+      })}
+
+      {/* Events without an assigned day */}
+      {unassignedEvents.length > 0 && (
+        <div className="mt-14">
+          <div className="mb-6 flex items-center gap-4">
+            <div className="shrink-0">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft">
+                Coming Soon
+              </span>
+              <h3 className="font-serif text-2xl font-semibold italic text-primary sm:text-3xl">
+                Schedule to Be Announced
+              </h3>
+            </div>
+            <div className="h-px flex-1 bg-primary/20" />
+          </div>
+
+          <div className="grid gap-x-8 gap-y-3 md:grid-cols-2">
+            {unassignedEvents.map((e, i) => (
+              <Reveal key={`${e.name}-unassigned-${i}`} delay={(i % 2) * 90}>
+                <EventPill event={e} flip={i % 2 === 1} onClick={() => setSelectedEvent(e)} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Event details modal */}
       {selectedEvent && (
         <EventDetailsModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
       )}

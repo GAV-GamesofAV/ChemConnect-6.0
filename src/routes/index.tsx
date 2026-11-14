@@ -5,6 +5,7 @@ import { About } from "@/components/fest/About";
 import { Events } from "@/components/fest/Events";
 import { Schedule } from "@/components/fest/Schedule";
 import { Contact } from "@/components/fest/Contact";
+import { Notices } from "@/components/fest/Notices";
 import { SiteFooter } from "@/components/fest/SiteFooter";
 import { BondDivider } from "@/components/fest/primitives";
 
@@ -36,12 +37,16 @@ function Index() {
       <main>
         <Hero />
         <BondDivider formula="C₆H₆" />
+        <Notices />
+        <BondDivider formula="CH₄" molecule="methane" />
         <About />
-        <BondDivider formula="C₆H₆" />
+        <BondDivider formula="NH₃" molecule="ammonia" />
         <Events />
+        <BondDivider formula="O₂" molecule="oxygen" />
         <Schedule />
-        <BondDivider formula="H₂O" />
+        <BondDivider formula="H₂O" molecule="water" />
         <Contact />
+        <BondDivider formula="C₂H₅OH" molecule="ethanol" />
       </main>
       <SiteFooter />
     </div>

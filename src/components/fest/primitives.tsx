@@ -112,7 +112,12 @@ export function SectionHeading({
         align === "center" ? "flex-col items-center text-center" : "items-start",
       )}
     >
-      <ElementTile number={number} symbol={symbol} tone={tone} className="w-14 shrink-0 text-base sm:w-16" />
+      <ElementTile
+        number={number}
+        symbol={symbol}
+        tone={tone}
+        className="w-14 shrink-0 text-base sm:w-16"
+      />
       <div className={cn(align === "center" && "max-w-2xl")}>
         <p className="font-script text-2xl leading-none text-accent sm:text-3xl">{eyebrow}</p>
         <h2 className="mt-1 font-display text-4xl uppercase leading-[0.95] tracking-wide text-primary text-balance-safe sm:text-5xl">
@@ -129,19 +134,187 @@ export function SectionHeading({
 }
 
 /** Divider drawn like a chemical bond: line — benzene ring — line. */
-export function BondDivider({ formula, className }: { formula?: string; className?: string }) {
+
+type Molecule =
+  "benzene" | "water" | "carbon-dioxide" | "methane" | "ammonia" | "oxygen" | "salt" | "ethanol";
+
+export function BondDivider({
+  formula,
+  molecule = "benzene",
+  className,
+}: {
+  formula?: string;
+  molecule?: Molecule;
+  className?: string;
+}) {
+  const common = {
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+
   return (
-    <div className={cn("mx-auto flex max-w-5xl items-center gap-3 px-6 text-primary/50", className)} aria-hidden="true">
+    <div
+      className={cn("mx-auto flex max-w-5xl items-center gap-3 px-6 text-primary/50", className)}
+      aria-hidden="true"
+    >
       <span className="h-px flex-1 bg-current" />
+
       <span className="h-1.5 w-1.5 rounded-full bg-current" />
-      <svg viewBox="0 0 60 52" className="h-8 w-9 shrink-0" fill="none" stroke="currentColor" strokeWidth="2">
-        <polygon points="15,2 45,2 58,26 45,50 15,50 2,26" />
-        <circle cx="30" cy="26" r="12" strokeDasharray="3 3" />
+
+      <svg viewBox="0 0 100 70" className="h-10 w-14 shrink-0" {...common}>
+        {molecule === "benzene" && (
+          <>
+            <polygon points="30,5 70,5 92,35 70,65 30,65 8,35" />
+            <circle cx="50" cy="35" r="19" strokeDasharray="4 3" />
+          </>
+        )}
+
+        {molecule === "water" && (
+          <>
+            <path d="M50 15 L25 48 M50 15 L75 48" />
+            <circle cx="50" cy="15" r="9" />
+            <circle cx="25" cy="48" r="9" />
+            <circle cx="75" cy="48" r="9" />
+            <text x="50" y="19" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              O
+            </text>
+            <text x="25" y="52" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+            <text x="75" y="52" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+          </>
+        )}
+
+        {molecule === "carbon-dioxide" && (
+          <>
+            <path d="M20 35 H80" />
+            <path d="M35 28 V42 M41 28 V42 M59 28 V42 M65 28 V42" />
+            <circle cx="15" cy="35" r="10" />
+            <circle cx="50" cy="35" r="10" />
+            <circle cx="85" cy="35" r="10" />
+            <text x="15" y="39" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              O
+            </text>
+            <text x="50" y="39" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              C
+            </text>
+            <text x="85" y="39" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              O
+            </text>
+          </>
+        )}
+
+        {molecule === "methane" && (
+          <>
+            <path d="M50 35 L50 8 M50 35 L15 55 M50 35 L85 55 M50 35 L50 65" />
+            <circle cx="50" cy="35" r="10" />
+            <text x="50" y="39" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              C
+            </text>
+            <text x="50" y="8" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+            <text x="12" y="62" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+            <text x="88" y="62" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+            <text x="50" y="69" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+          </>
+        )}
+
+        {molecule === "ammonia" && (
+          <>
+            <path d="M50 22 L25 55 M50 22 L75 55 M50 22 L50 5" />
+            <circle cx="50" cy="22" r="10" />
+            <text x="50" y="26" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              N
+            </text>
+            <text x="50" y="8" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+            <text x="25" y="65" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+            <text x="75" y="65" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H
+            </text>
+          </>
+        )}
+
+        {molecule === "oxygen" && (
+          <>
+            <circle cx="30" cy="35" r="13" />
+            <circle cx="70" cy="35" r="13" />
+            <path d="M43 31 H57 M43 39 H57" />
+            <text x="30" y="39" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              O
+            </text>
+            <text x="70" y="39" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              O
+            </text>
+          </>
+        )}
+
+        {molecule === "salt" && (
+          <>
+            <path
+              d="M25 15 V55 M50 15 V55 M75 15 V55 M15 25 H85 M15 45 H85"
+              strokeDasharray="3 3"
+            />
+            <circle cx="25" cy="25" r="9" />
+            <circle cx="50" cy="45" r="9" />
+            <circle cx="75" cy="25" r="9" />
+            <circle cx="50" cy="15" r="7" />
+            <circle cx="25" cy="55" r="7" />
+            <circle cx="75" cy="55" r="7" />
+            <text x="25" y="29" textAnchor="middle" fontSize="9" fill="currentColor" stroke="none">
+              +
+            </text>
+            <text x="50" y="49" textAnchor="middle" fontSize="9" fill="currentColor" stroke="none">
+              −
+            </text>
+            <text x="75" y="29" textAnchor="middle" fontSize="9" fill="currentColor" stroke="none">
+              +
+            </text>
+          </>
+        )}
+
+        {molecule === "ethanol" && (
+          <>
+            <path d="M15 35 L40 20 L65 35 L85 20" />
+            <text x="15" y="30" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              H₃C
+            </text>
+            <text x="40" y="17" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              C
+            </text>
+            <text x="65" y="48" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              C
+            </text>
+            <text x="85" y="17" textAnchor="middle" fontSize="10" fill="currentColor" stroke="none">
+              OH
+            </text>
+          </>
+        )}
       </svg>
+
       <span className="h-1.5 w-1.5 rounded-full bg-current" />
+
       <span className="h-px flex-1 bg-current" />
+
       {formula && (
-        <span className="hidden font-mono text-xs tracking-wider text-ink-soft sm:inline">{formula}</span>
+        <span className="hidden font-mono text-xs tracking-wider text-ink-soft sm:inline">
+          {formula}
+        </span>
       )}
     </div>
   );
@@ -152,7 +325,10 @@ export function Annotation({ children, className }: { children: ReactNode; class
   return (
     <span
       aria-hidden="true"
-      className={cn("pointer-events-none select-none font-mono text-xs tracking-wide text-ink-soft/60", className)}
+      className={cn(
+        "pointer-events-none select-none font-mono text-xs tracking-wide text-ink-soft/60",
+        className,
+      )}
     >
       {children}
     </span>

@@ -58,6 +58,8 @@ export const eventCategories: {
   { id: "Experiment", label: "Experiments", symbol: "Ex", blurb: "Hands-on chemistry, live." },
 ];
 
+export type FestDay = 1 | 2;
+
 export type FestEvent = {
   name: string;
   category: EventCategory;
@@ -65,7 +67,9 @@ export type FestEvent = {
   venue: string;
   description: string;
 
-  // Additional event details
+  days?: FestDay[];
+  preFest?: boolean;
+
   date?: string;
   details?: string;
   eligibility?: string;
@@ -75,50 +79,76 @@ export type FestEvent = {
   registrationInfo?: string;
   registrationUrl?: string;
 };
-
 /** Placeholder events — mirror the six slots on the poster. Edit freely. */
+
 export const events: FestEvent[] = [
   {
-    name: "Event 1",
+    name: "ChemQuest",
     category: "Competition",
-    time: "Time",
+    time: "Time TBA",
+    date: "21st November 2026",
+    preFest: true,
     venue: "School Premises",
-    description: "Description to be added.",
+    description: "First round of the quiz ChemQuest",
+    details:
+      "First round of the quiz ChemQuest will be held on 21st November 2026. Registrations are now open. Qualifying this will lead to the second round of the quiz which will be held on the fest day.",
   },
   {
-    name: "Event 2",
+    name: "Chem-O-Design",
     category: "Competition",
-    time: "Time",
+    time: "Closing Time TBA",
+    date: "End date TBA",
+    preFest: true,
     venue: "School Premises",
-    description: "Description to be added.",
+    description: "Design a poster",
+    details:
+      "Registrations are open for the Poster Making Competition. Students can start preparing their entries. The last date for submission of entries will be announced soon.",
+    registrationInfo: "Register yourself to submit your entry",
+    registrationUrl:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdRpO7OyERkl8MD_clAQySn-6eRdonT93ToFFegbKbFuJh9qQ/viewform?usp=sharing&ouid=117569747926280062501",
   },
   {
-    name: "Event 3",
+    name: "Chem-O-Present",
+    category: "Competition",
+    time: "Time TBA",
+    venue: "School Premises",
+    preFest: true,
+    description: "Create a presentation",
+    details:
+      "Prepare a presentation on a chemistry topic of your choice. The best presentations will be showcased on Fest day.",
+    registrationInfo: "Submit your entries at the following link",
+    registrationUrl: "https://forms.gle/vYtRgnmdQsnivhHh6",
+  },
+  {
+    name: "Just A Minute",
     category: "Activity",
-    time: "Time",
+    time: "Time TBA",
     venue: "School Premises",
-    description: "Description to be added.",
+    description: "Chem Charades",
+    details: "Welcome to the Dum Charades, but with a twist of Chemitry",
   },
   {
-    name: "Event 4",
-    category: "Experiment",
-    time: "Time",
+    name: "Art Alchemy",
+    category: "Activity",
+    time: "Time TBA",
     venue: "School Premises",
-    description: "Description to be added.",
+    description: "Design a test tube",
+    details: "Show your creativity, decorate the test tube"
   },
   {
-    name: "Event 5",
-    category: "Experiment",
-    time: "Time",
+    name: "Chem Escape",
+    category: "Activity",
+    time: "Time TBA",
     venue: "School Premises",
-    description: "Description to be added.",
+    description: "Can you escape for the horror of chemistry",
+    details: "Cooperate with your partner to solve puzzles and crack the code to escape",
   },
   {
-    name: "Event 6",
-    category: "Exhibition",
-    time: "Time",
+    name: "Fun In Lab",
+    category: "Activity",
+    time: "Time TBA",
     venue: "School Premises",
-    description: "Description to be added.",
+    description: "Only fun with chemistry",
   },
 ];
 
@@ -139,7 +169,7 @@ export const schedule: ScheduleDay[] = [
 export const importantInfo: { label: string; value: string }[] = [
   { label: "Date", value: "To be announced" },
   { label: "Timings", value: "To be announced" },
-  { label: "Venue", value: "MP Hall" },
+  { label: "Venue", value: "School Premises" },
 ];
 
 export type TeamTier = "leadership" | "coordinator" | "co-coordinator" | "member";
@@ -206,7 +236,43 @@ export const socials: {
   url: string;
 }[] = [];
 
+// ============================================================
+// NOTICES & ANNOUNCEMENTS
+// ============================================================
+
+export type NoticeStatus = "important" | "open" | "upcoming" | "general" | "closed";
+
+export type Announcement = {
+  title: string;
+  description: string;
+  date: string; // Format: YYYY-MM-DD
+  category: string;
+  status: NoticeStatus;
+  actionLabel?: string;
+  actionUrl?: string;
+};
+
+export const announcements: Announcement[] = [
+  {
+    title: "Chemistry Quiz - Round 1",
+    description:
+      "Round 1 of the Chemistry Quiz will be held on 21 November 2026. Registrations are now open.",
+    date: "2026-11-14",
+    category: "Registration",
+    status: "open",
+  },
+  {
+    title: "Poster/PPT Making Competition",
+    description:
+      "Registrations are open for the Poster and PPT Making Competition. Students can start preparing their entries.",
+    date: "2026-11-14",
+    category: "Competition",
+    status: "open",
+  },
+];
+
 export const navLinks = [
+  { id: "notices", label: "Notices" },
   { id: "about", label: "About" },
   { id: "events", label: "Events & Games" },
   { id: "schedule", label: "Schedule" },
