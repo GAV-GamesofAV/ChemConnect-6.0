@@ -64,6 +64,16 @@ export type FestEvent = {
   time: string;
   venue: string;
   description: string;
+
+  // Additional event details
+  date?: string;
+  details?: string;
+  eligibility?: string;
+  format?: string;
+  rules?: string[];
+  materials?: string[];
+  registrationInfo?: string;
+  registrationUrl?: string;
 };
 
 /** Placeholder events — mirror the six slots on the poster. Edit freely. */
