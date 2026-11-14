@@ -109,7 +109,7 @@ function TeamModal({ people, onClose }: { people: Person[]; onClose: () => void 
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex flex-col bg-paper/95 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex flex-col bg-paper/95 backdrop-blur-md animate-in fade-in slide-in-from-bottom-3 duration-300 ease-out"
       role="dialog"
       aria-modal="true"
       aria-labelledby="team-modal-title"

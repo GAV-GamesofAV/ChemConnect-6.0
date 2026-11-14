@@ -94,17 +94,17 @@ function NoticeModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-6"
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-6 animate-in fade-in duration-300"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
     >
       <div
-        role="dialog"
+      role="dialog"
         aria-modal="true"
         aria-labelledby="notice-modal-title"
-        className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl"
-      >
+        className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl animate-in fade-in zoom-in-95 slide-in-from-bottom-3 duration-300 ease-out"
+        >
         <div className="flex items-center justify-between border-b border-border px-5 py-5 sm:px-8">
           <div>
             <p className="font-script text-xl text-accent">Stay Updated</p>

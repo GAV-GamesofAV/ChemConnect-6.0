@@ -79,7 +79,7 @@ function EventDetailsModal({ event, onClose }: { event: FestEvent; onClose: () =
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-6"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-6 animate-in fade-in duration-300"
       onClick={onClose}
     >
       <div
@@ -87,7 +87,7 @@ function EventDetailsModal({ event, onClose }: { event: FestEvent; onClose: () =
         aria-modal="true"
         aria-labelledby="event-modal-title"
         onClick={(e) => e.stopPropagation()}
-        className="relative flex max-h-[90dvh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-primary/20 bg-paper shadow-2xl"
+        className="relative flex max-h-[90dvh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-primary/20 bg-paper shadow-2xl animate-in fade-in zoom-in-95 slide-in-from-bottom-3 duration-300 ease-out"
       >
         {/* Header */}
         <div className="flex shrink-0 items-start justify-between gap-4 border-b border-border p-5 sm:p-7">
