@@ -8,6 +8,7 @@ import { Contact } from "@/components/fest/Contact";
 import { Notices } from "@/components/fest/Notices";
 import { SiteFooter } from "@/components/fest/SiteFooter";
 import { BondDivider } from "@/components/fest/primitives";
+import type { FestEvent } from "@/data/fest";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,13 +32,24 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const handleNoticeEventClick = (event: FestEvent) => {
+    const eventId = `event-${event.name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")}`;
+
+    document.getElementById(eventId)?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
   return (
     <div className="paper-texture min-h-screen">
       <SiteHeader />
       <main>
         <Hero />
         <BondDivider formula="C₆H₆" />
-        <Notices />
+        <Notices onEventClick={handleNoticeEventClick} />
         <BondDivider formula="CH₄" molecule="methane" />
         <About />
         <BondDivider formula="NH₃" molecule="ammonia" />

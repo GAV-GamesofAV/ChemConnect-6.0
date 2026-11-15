@@ -3,6 +3,7 @@ import { Clock, MapPin, X, CalendarDays, Users, ClipboardList, ExternalLink } fr
 import { eventCategories, events, type EventCategory, type FestEvent } from "@/data/fest";
 import { cn } from "@/lib/utils";
 import { ElementTile, Reveal, SectionHeading } from "./primitives";
+import ReactMarkdown from "react-markdown";
 
 function EventPill({
   event,
@@ -15,6 +16,10 @@ function EventPill({
 }) {
   return (
     <button
+      id={`event-${event.name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")}`}
       type="button"
       onClick={onClick}
       aria-haspopup="dialog"
@@ -122,9 +127,31 @@ function EventDetailsModal({ event, onClose }: { event: FestEvent; onClose: () =
               About the event
             </h3>
 
-            <p className="mt-3 whitespace-pre-line text-sm leading-7 text-muted-foreground sm:text-base">
+            <ReactMarkdown
+              components={{
+                p: ({ children }) => (
+                  <p className="mb-4 text-sm leading-7 text-muted-foreground sm:text-base">
+                    {children}
+                  </p>
+                ),
+                strong: ({ children }) => (
+                  <strong className="font-bold text-primary">{children}</strong>
+                ),
+                ul: ({ children }) => (
+                  <ul className="mb-4 list-disc space-y-2 pl-6 text-sm leading-7 text-muted-foreground sm:text-base">
+                    {children}
+                  </ul>
+                ),
+                li: ({ children }) => <li>{children}</li>,
+                h3: ({ children }) => (
+                  <h3 className="mb-2 mt-5 font-display text-lg font-bold uppercase text-primary">
+                    {children}
+                  </h3>
+                ),
+              }}
+            >
               {event.details || event.description}
-            </p>
+            </ReactMarkdown>
           </section>
 
           {/* Basic information */}

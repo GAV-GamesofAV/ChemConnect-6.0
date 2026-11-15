@@ -2,7 +2,13 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Bell, CalendarDays, X } from "lucide-react";
 
-import { announcements, type Announcement, type NoticeStatus } from "@/data/fest";
+import {
+  announcements,
+  events,
+  type Announcement,
+  type NoticeStatus,
+  type FestEvent,
+} from "@/data/fest";
 
 import { Reveal, SectionHeading } from "./primitives";
 
@@ -30,7 +36,13 @@ function formatDate(date: string) {
   });
 }
 
-function NoticeCard({ notice }: { notice: Announcement }) {
+function NoticeCard({
+  notice,
+  onEventClick,
+}: {
+  notice: Announcement;
+  onEventClick: (event: FestEvent) => void;
+}) {
   return (
     <article className="group relative flex h-full flex-col rounded-xl border border-border bg-paper p-5 shadow-paper transition-all duration-300 hover:-translate-y-1 hover:shadow-ink sm:p-6">
       <div className="flex items-start justify-between gap-3">
@@ -59,23 +71,31 @@ function NoticeCard({ notice }: { notice: Announcement }) {
           {formatDate(notice.date)}
         </span>
 
-        {notice.actionUrl && (
-          <a
-            href={notice.actionUrl}
-            target="_blank"
-            rel="noreferrer"
+        {notice.eventName && (
+          <button
+            type="button"
+            onClick={() => {
+              const event = events.find((e) => e.name === notice.eventName);
+              if (event) onEventClick(event);
+            }}
             className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-accent"
           >
-            {notice.actionLabel || "Know More"}
+            View Event & Register
             <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </button>
         )}
       </div>
     </article>
   );
 }
 
-function NoticeModal({ onClose }: { onClose: () => void }) {
+function NoticeModal({
+  onClose,
+  onEventClick,
+}: {
+  onClose: () => void;
+  onEventClick: (event: FestEvent) => void;
+}) {
   const sortedNotices = [...announcements].sort((a, b) => b.date.localeCompare(a.date));
 
   useEffect(() => {
@@ -94,17 +114,17 @@ function NoticeModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-6 animate-in fade-in duration-300"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-6 animate-in fade-in duration-300"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
     >
       <div
-      role="dialog"
+        role="dialog"
         aria-modal="true"
         aria-labelledby="notice-modal-title"
         className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl animate-in fade-in zoom-in-95 slide-in-from-bottom-3 duration-300 ease-out"
-        >
+      >
         <div className="flex items-center justify-between border-b border-border px-5 py-5 sm:px-8">
           <div>
             <p className="font-script text-xl text-accent">Stay Updated</p>
@@ -129,7 +149,14 @@ function NoticeModal({ onClose }: { onClose: () => void }) {
         <div className="overflow-y-auto p-5 sm:p-8">
           <div className="grid gap-4 sm:grid-cols-2">
             {sortedNotices.map((notice, index) => (
-              <NoticeCard key={`${notice.title}-${index}`} notice={notice} />
+              <NoticeCard
+                key={`${notice.title}-${index}`}
+                notice={notice}
+                onEventClick={(event) => {
+                  onClose();
+                  setTimeout(() => onEventClick(event), 350);
+                }}
+              />
             ))}
           </div>
 
@@ -147,7 +174,7 @@ function NoticeModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function Notices() {
+export function Notices({ onEventClick }: { onEventClick: (event: FestEvent) => void }) {
   const [showAll, setShowAll] = useState(false);
 
   const sortedNotices = [...announcements].sort((a, b) => b.date.localeCompare(a.date));
@@ -170,7 +197,7 @@ export function Notices() {
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {latestNotices.map((notice, index) => (
               <Reveal key={`${notice.title}-${index}`} delay={index * 90}>
-                <NoticeCard notice={notice} />
+                <NoticeCard notice={notice} onEventClick={onEventClick} />
               </Reveal>
             ))}
           </div>
@@ -196,7 +223,7 @@ export function Notices() {
         </div>
       )}
 
-      {showAll && <NoticeModal onClose={() => setShowAll(false)} />}
+      {showAll && <NoticeModal onClose={() => setShowAll(false)} onEventClick={onEventClick} />}
     </section>
   );
 }

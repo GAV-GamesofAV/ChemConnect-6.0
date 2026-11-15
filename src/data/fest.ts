@@ -22,7 +22,7 @@ export const fest = {
   edition: "Chem Connect 6.0",
   tagline: "Where Chemistry Comes Alive.",
   intro:
-    "The annual chemistry festival of the Chemistrecreate Chemistry Club — a celebration of experiments, ideas and curious minds. Full details are on their way.",
+    "The annual chemistry festival of the Chemistrecreate Chemistry Club — a celebration of experiments, ideas and curious minds.",
   dates: "Dates to be announced",
   venue: "School Premises",
 };
@@ -90,8 +90,29 @@ export const events: FestEvent[] = [
     preFest: true,
     venue: "School Premises",
     description: "First round of the quiz ChemQuest",
-    details:
-      "First round of the quiz ChemQuest will be held on 21st November 2026. Registrations are now open. Qualifying this will lead to the second round of the quiz which will be held on the fest day.",
+    details: `
+Are you ready to challenge your Chemistry knowledge?
+
+**CHEMQUEST** is an exciting Chemistry-based quiz competition designed to test your scientific knowledge, conceptual understanding, logical thinking, observation and problem-solving skills.
+
+### Open to:
+- **Juniors:** Classes 8, 9 & 10
+- **Seniors:** Classes 11 & 12
+
+### Competition Format:
+- **Round 1:** Written Chemistry Test
+- **Round 2:** PPT-Based Quiz for shortlisted participants
+
+### Prizes: 
+- **1st** : Mug 
+- Certificate of Participation
+
+Whether you are a Junior or a Senior, get ready to explore, learn and challenge yourself in the fascinating world of Chemistry!
+`,
+
+    registrationInfo: "Register yourself for the quiz",
+    registrationUrl:
+      "https://docs.google.com/forms/d/e/1FAIpQLScGDIqxbwA1IZyK5vDYgOuwGTwknZjZiezPN59XWK85nWOBtQ/viewform?usp=dialog",
   },
   {
     name: "Chem-O-Design",
@@ -101,8 +122,23 @@ export const events: FestEvent[] = [
     preFest: true,
     venue: "School Premises",
     description: "Design a poster",
-    details:
-      "Registrations are open for the Poster Making Competition. Students can start preparing their entries. The last date for submission of entries will be announced soon.",
+    details: `
+Are you ready to bring Chemistry to life through your creativity?
+
+**CHEM-O-DESIGN** is an exciting poster-making competition that combines scientific knowledge with artistic expression. Participants get the opportunity to explore fascinating Chemistry concepts and present their ideas through visually engaging and informative posters.
+
+### Open to:
+- **Juniors:** Classes 8th, 9th & 10th
+
+### Competition Format:
+- Participants will create a poster based on a given Chemistry-related theme.
+- Posters will be evaluated on creativity, scientific accuracy, presentation and overall visual appeal.
+
+### Prizes :
+- Certificates
+
+Unleash your imagination, put your scientific ideas on paper and show everyone how creative Chemistry can be!
+`,
     registrationInfo: "Register yourself to submit your entry",
     registrationUrl:
       "https://docs.google.com/forms/d/e/1FAIpQLSdRpO7OyERkl8MD_clAQySn-6eRdonT93ToFFegbKbFuJh9qQ/viewform?usp=sharing&ouid=117569747926280062501",
@@ -114,8 +150,24 @@ export const events: FestEvent[] = [
     venue: "School Premises",
     preFest: true,
     description: "Create a presentation",
-    details:
-      "Prepare a presentation on a chemistry topic of your choice. The best presentations will be showcased on Fest day.",
+    details: `
+Have an idea worth presenting? It's time to let your knowledge speak!
+
+**CHEM-O-PRESENT** is a presentation competition designed to encourage students to explore Chemistry beyond textbooks and communicate scientific concepts through engaging and informative presentations.
+
+### Open to:
+- **Seniors:** Classes 11th & 12th
+
+### Competition Format:
+- Participants will prepare and present a PowerPoint presentation on a given Chemistry-related theme.
+- Presentations will be evaluated on content, scientific accuracy, creativity, presentation skills and clarity of explanation.
+
+### Prizes: 
+- Selected entries will be allowed to present on the Fest Day 
+
+Research, create and present your ideas with confidence. Turn complex Chemistry concepts into something everyone can understand!
+
+`,
     registrationInfo: "Submit your entries at the following link",
     registrationUrl: "https://forms.gle/vYtRgnmdQsnivhHh6",
   },
@@ -125,7 +177,7 @@ export const events: FestEvent[] = [
     time: "Time TBA",
     venue: "School Premises",
     description: "Chem Charades",
-    details: "Welcome to the Dum Charades, but with a twist of Chemitry",
+    details: "Welcome to the Dum Charades, but with a twist of Chemistry",
   },
   {
     name: "Art Alchemy",
@@ -208,8 +260,18 @@ export const contacts = {
   } as Person,
 
   coordinators: [
-    { name: "Ronak Kumar", role: "Planning Coordinator", tier: "coordinator" },
-    { name: "Ayush", role: "Event Coordinator", tier: "coordinator" },
+    {
+      name: "Ronak Kumar",
+      role: "Planning Coordinator",
+      tier: "coordinator",
+      image: "src/assets/member images/Ronak.jpeg",
+    },
+    {
+      name: "Ayush",
+      role: "Event Coordinator",
+      tier: "coordinator",
+      image: "src/assets/member images/Ayush.jpeg",
+    },
     { name: "Alok", role: "Tech Coordinator", tier: "coordinator" },
     { name: "Akshra", role: "Decoration and Record Coordinator", tier: "coordinator" },
   ] as Person[],
@@ -245,29 +307,39 @@ export type NoticeStatus = "important" | "open" | "upcoming" | "general" | "clos
 export type Announcement = {
   title: string;
   description: string;
-  date: string; // Format: YYYY-MM-DD
+  date: string;
   category: string;
   status: NoticeStatus;
-  actionLabel?: string;
-  actionUrl?: string;
+  eventName?: string;
 };
 
 export const announcements: Announcement[] = [
   {
-    title: "Chemistry Quiz - Round 1",
+    title: "ChemQuest - Round 1",
     description:
       "Round 1 of the Chemistry Quiz will be held on 21 November 2026. Registrations are now open.",
     date: "2026-11-14",
     category: "Registration",
     status: "open",
+    eventName: "ChemQuest",
   },
   {
-    title: "Poster/PPT Making Competition",
+    title: "Chem-O-Design",
     description:
-      "Registrations are open for the Poster and PPT Making Competition. Students can start preparing their entries.",
+      "Registrations are open for the Chem-O-Design. Students can start preparing their entries.",
     date: "2026-11-14",
     category: "Competition",
     status: "open",
+    eventName: "Chem-O-Design",
+  },
+  {
+    title: "Chem-O-Present",
+    description:
+      "Registrations are open for the Chem-O-Present. Students can now submit their presentations.",
+    date: "2026-11-14",
+    category: "Competition",
+    status: "open",
+    eventName: "Chem-O-Present",
   },
 ];
 

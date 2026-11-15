@@ -37,7 +37,10 @@ export function Hero() {
       <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center">
         <div className="reveal" data-visible="true">
           <div className="relative mx-auto w-fit">
-            <span className="absolute inset-[-10px] rounded-full border border-dashed border-primary/40 animate-orbit" aria-hidden="true" />
+            <span
+              className="absolute inset-[-10px] rounded-full border border-dashed border-primary/40 animate-orbit"
+              aria-hidden="true"
+            />
             <img
               src={logo}
               alt={`${club.name} — ${club.motto}`}
@@ -71,9 +74,17 @@ export function Hero() {
         </div>
 
         <dl className="mt-8 flex flex-col items-center gap-1 sm:flex-row sm:gap-6 font-mono text-xs uppercase tracking-widest text-ink-soft">
-          <div className="flex gap-2"><dt className="sr-only">Dates</dt><dd>{fest.dates}</dd></div>
-          <span aria-hidden="true" className="hidden sm:inline">·</span>
-          <div className="flex gap-2"><dt className="sr-only">Venue</dt><dd>{fest.venue}</dd></div>
+          <div className="flex gap-2">
+            <dt className="sr-only">Dates</dt>
+            <dd>{fest.dates}</dd>
+          </div>
+          <span aria-hidden="true" className="hidden sm:inline">
+            ·
+          </span>
+          <div className="flex gap-2">
+            <dt className="sr-only">Venue</dt>
+            <dd>{fest.venue}</dd>
+          </div>
         </dl>
       </div>
 

@@ -22,8 +22,8 @@ export function SiteHeader() {
         open
           ? "border-b border-border/70 bg-background"
           : scrolled
-          ? "border-b border-border/70 bg-background/90 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent",
+            ? "border-b border-border/70 bg-background/90 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
@@ -35,7 +35,9 @@ export function SiteHeader() {
             height={39}
             className="h-10 w-10 rounded-full bg-paper object-contain ring-1 ring-border"
           />
-          <span className="font-display text-lg uppercase tracking-wide text-primary">{club.name}</span>
+          <span className="font-display text-lg uppercase tracking-wide text-primary">
+            {club.name}
+          </span>
         </a>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
@@ -71,7 +73,9 @@ export function SiteHeader() {
                   onClick={() => setOpen(false)}
                   className="flex items-center gap-2 rounded-xl border border-border bg-paper px-3 py-3 text-sm font-medium text-primary transition-colors hover:border-primary"
                 >
-                  <span className="font-mono text-[0.65rem] text-ink-soft">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-mono text-[0.65rem] text-ink-soft">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   {l.label}
                 </a>
               </li>
