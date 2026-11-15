@@ -10,6 +10,9 @@
  *  the site will show a "coming soon" state instead of a broken link.
  */
 
+import ronakImg from "@/assets/member images/Ronak.jpeg";
+import ayushImg from "@/assets/member images/Ayush.jpeg";
+
 export const club = {
   name: "ChemistRecreate",
   motto: "Experimentalis Doctrina",
@@ -264,13 +267,13 @@ export const contacts = {
       name: "Ronak Kumar",
       role: "Planning Coordinator",
       tier: "coordinator",
-      image: "public/member images/Ronak.jpeg",
+      image: ronakImg,
     },
     {
       name: "Ayush",
       role: "Event Coordinator",
       tier: "coordinator",
-      image: "public/member images/Ayush.jpeg",
+      image: ayushImg,
     },
     { name: "Alok", role: "Tech Coordinator", tier: "coordinator" },
     { name: "Akshra", role: "Decoration and Record Coordinator", tier: "coordinator" },
