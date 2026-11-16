@@ -21,6 +21,7 @@ import saubhagyaImg from "@/assets/member images/Saubhagya.jpeg";
 import priyanshuImg from "@/assets/member images/Priyanshu.jpeg";
 import ritikImg from "@/assets/member images/ritik.jpeg";
 import alokImg from "@/assets/member images/Alok.jpeg";
+import gauravImg from "@/assets/member images/Gaurav.jpeg";
 
 export const club = {
   name: "ChemistRecreate",
@@ -447,7 +448,7 @@ export const contacts = {
     role: "Club Vice President",
     className: "Class XI",
     tier: "leadership",
-    image: "/members/vice-president.jpg",
+    image: gauravImg,
     email: "",
     phone: "",
   } as Person,

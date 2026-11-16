@@ -56,8 +56,8 @@ function Index() {
         <BondDivider formula="NH₃" molecule="ammonia" />
         <Events />
         <BondDivider formula="O₂" molecule="oxygen" />
-        <Schedule />
-        <BondDivider formula="H₂O" molecule="water" />
+        {/* <Schedule /> */}
+        {/* <BondDivider formula="H₂O" molecule="water" /> */}
         <Highlights />
         <BondDivider formula="CO₂" molecule="carbon-dioxide" />
         <Contact />
