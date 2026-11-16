@@ -12,6 +12,8 @@
 
 import ronakImg from "@/assets/member images/Ronak.jpeg";
 import ayushImg from "@/assets/member images/Ayush.jpeg";
+import { id } from "date-fns/locale";
+import { labelDayButton } from "react-day-picker";
 
 export const club = {
   name: "ChemistRecreate",
@@ -347,10 +349,11 @@ export const announcements: Announcement[] = [
 ];
 
 export const navLinks = [
-  { id: "notices", label: "Notices" },
+  { id: "notices", label: "Announcements" },
   { id: "about", label: "About" },
   { id: "events", label: "Events & Games" },
   { id: "schedule", label: "Schedule" },
+  { id: "highlights", label: "Highlights" },
   { id: "team", label: "Our Team" },
   { id: "contact", label: "Contact" },
 ] as const;

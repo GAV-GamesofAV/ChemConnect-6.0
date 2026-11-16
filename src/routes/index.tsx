@@ -9,6 +9,7 @@ import { Notices } from "@/components/fest/Notices";
 import { SiteFooter } from "@/components/fest/SiteFooter";
 import { BondDivider } from "@/components/fest/primitives";
 import type { FestEvent } from "@/data/fest";
+import { Highlights } from "@/components/fest/Highlights";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,6 +58,8 @@ function Index() {
         <BondDivider formula="O₂" molecule="oxygen" />
         <Schedule />
         <BondDivider formula="H₂O" molecule="water" />
+        <Highlights />
+        <BondDivider formula="CO₂" molecule="carbon-dioxide" />
         <Contact />
         <BondDivider formula="C₂H₅OH" molecule="ethanol" />
       </main>
