@@ -66,10 +66,10 @@ function NoticeCard({
       </p>
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
-        <span className="flex items-center gap-2 text-xs text-ink-soft">
+       { notice.date &&  <span className="flex items-center gap-2 text-xs text-ink-soft">
           <CalendarDays className="h-3.5 w-3.5" />
           {formatDate(notice.date)}
-        </span>
+        </span>}
 
         {notice.eventName && (
           <button

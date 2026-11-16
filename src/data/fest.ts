@@ -370,6 +370,14 @@ Ever wondered what happens when teachers and students team up in the lab?
 Get ready to swap the usual classroom roles, team up with your teachers and experience Chemistry like never before!
     `,
   },
+  // {
+  //   name:"Chem-O-Rythm",
+  //   category:"Competition",
+  //   days:[2],
+  //   date:"1st December",
+  //   venue: "School Premises",
+
+  // }
   {
     name: "Demonstrations",
     category: "Experiment",
@@ -438,7 +446,7 @@ export const contacts = {
     tier: "leadership",
     image: "/members/president.jpg",
     email: "",
-    phone: "8368944415",
+    phone: "",
   } as Person,
 
   vicePresident: {
@@ -447,8 +455,8 @@ export const contacts = {
     className: "Class XI",
     tier: "leadership",
     image: gauravImg,
-    email: "",
-    phone: "9310426107",
+    email: "gauravsingh170110@gmail.com",
+    phone: "",
   } as Person,
 
   coordinators: [
@@ -525,27 +533,27 @@ export const announcements: Announcement[] = [
     title: "ChemQuest: Last Date - 18th November(10:00 PM)",
     description:
       "All the interested students are requested to register themself for ChemQuest till 18th November 10:00PM",
-    date: "17th November",
     status: "open",
     category: "Registration",
     eventName: "ChemQuest Round 1",
+    date: "2026-11-17",
   },
   {
     title: "Chem-O-Present: Last Date - 23rd November (10:00 PM)",
     description:
       "All the interested students are requested to submit their PPTs till 23rd November 10:00 PM",
-    date: "17th November",
     category: "Registration",
     status: "open",
     eventName: "Chem-O-Present",
+    date: "2026-11-17",
   },
   {
     title: "Last Date for Registration - 26th November (10:00 PM)",
     description:
       "All the interested sutdents are requested to register themself for the activites they want to participate in till 26th November, 10:00 PM",
-    date: "17 November",
     status: "open",
     category: "Registration",
+    date: "2026-11-17",
   },
 ];
 
