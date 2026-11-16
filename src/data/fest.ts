@@ -34,8 +34,7 @@ export const club = {
 export const fest = {
   edition: "Chem Connect 6.0",
   tagline: "Where Chemistry Comes Alive.",
-  intro:
-    "The annual chemistry festival of the Chemistrecreate Chemistry Club — a celebration of experiments, ideas and curious minds.",
+  intro: "",
   dates: "30th November & 1st December 2026",
   venue: "School Premises",
 };
@@ -409,7 +408,6 @@ export const schedule: ScheduleDay[] = [
     date: "20th November",
     slots: [],
   },
-  {},
 ];
 
 export const importantInfo: { label: string; value: string }[] = [
@@ -440,7 +438,7 @@ export const contacts = {
     tier: "leadership",
     image: "/members/president.jpg",
     email: "",
-    phone: "",
+    phone: "8368944415",
   } as Person,
 
   vicePresident: {
@@ -450,7 +448,7 @@ export const contacts = {
     tier: "leadership",
     image: gauravImg,
     email: "",
-    phone: "",
+    phone: "9310426107",
   } as Person,
 
   coordinators: [
@@ -522,7 +520,34 @@ export type Announcement = {
   eventName?: string;
 };
 
-export const announcements: Announcement[] = [];
+export const announcements: Announcement[] = [
+  {
+    title: "ChemQuest: Last Date - 18th November(10:00 PM)",
+    description:
+      "All the interested students are requested to register themself for ChemQuest till 18th November 10:00PM",
+    date: "17th November",
+    status: "open",
+    category: "Registration",
+    eventName: "ChemQuest Round 1",
+  },
+  {
+    title: "Chem-O-Present: Last Date - 23rd November (10:00 PM)",
+    description:
+      "All the interested students are requested to submit their PPTs till 23rd November 10:00 PM",
+    date: "17th November",
+    category: "Registration",
+    status: "open",
+    eventName: "Chem-O-Present",
+  },
+  {
+    title: "Last Date for Registration - 26th November (10:00 PM)",
+    description:
+      "All the interested sutdents are requested to register themself for the activites they want to participate in till 26th November, 10:00 PM",
+    date: "17 November",
+    status: "open",
+    category: "Registration",
+  },
+];
 
 export const navLinks = [
   { id: "notices", label: "Announcements" },
