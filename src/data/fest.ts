@@ -241,7 +241,7 @@ Research, create and present your ideas with confidence. Turn complex Chemistry 
     date: "1st December",
     venue: "School Premises",
     registrationInfo: "Register yourself:",
-    registrationUrl: "https://forms.gle/REdU8YnxRxRYxyoy7",
+    registrationUrl: "https://forms.gle/Wx74USqY9VVcebNg8",
     description: "1-Minute quick activities",
     details: `
 Are you quick enough to take on the challenge?
