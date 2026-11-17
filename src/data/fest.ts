@@ -14,7 +14,7 @@ import alokImg from "@/assets/member images/alok.png";
 import kritiImg from "@/assets/member images/Kriti.jpeg";
 import ronakImg from "@/assets/member images/Ronak.jpeg";
 import ayushImg from "@/assets/member images/Ayush 2.jpeg";
-import bhavyaImg from "@/assets/member images/Bhavya.jpeg";
+import bhavyaImg from "@/assets/member images/Bhavya 2.jpeg";
 import khushiImg from "@/assets/member images/Khushi.jpeg";
 import naitikImg from "@/assets/member images/Naitik 2.jpeg";
 import princeRImg from "@/assets/member images/Prince Rajbhar.jpeg";
