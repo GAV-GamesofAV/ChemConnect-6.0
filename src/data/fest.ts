@@ -10,6 +10,8 @@
  *  the site will show a "coming soon" state instead of a broken link.
  */
 
+import alokImg from "@/assets/member images/alok.png";
+import kritiImg from "@/assets/member images/Kriti.jpeg";
 import ronakImg from "@/assets/member images/Ronak.jpeg";
 import ayushImg from "@/assets/member images/Ayush.jpeg";
 import bhavyaImg from "@/assets/member images/Bhavya.jpeg";
@@ -20,7 +22,6 @@ import princeKImg from "@/assets/member images/Prince K.jpeg";
 import saubhagyaImg from "@/assets/member images/Saubhagya.jpeg";
 import priyanshuImg from "@/assets/member images/Priyanshu.jpeg";
 import ritikImg from "@/assets/member images/ritik.jpeg";
-import alokImg from "@/assets/member images/Alok.jpeg";
 import gauravImg from "@/assets/member images/Gaurav.jpeg";
 
 export const club = {
@@ -35,7 +36,7 @@ export const fest = {
   edition: "Chem Connect 6.0",
   tagline: "Where Chemistry Comes Alive.",
   intro: "",
-  dates: "30th November & 1st December 2026",
+  dates: "4th & 5th December 2026",
   venue: "School Premises",
 };
 
@@ -57,7 +58,7 @@ From exploring fascinating scientific concepts to showcasing creativity and tale
   ],
   facts: [
     { label: "Edition", value: "Chem Connect 6.0" },
-    { label: "Dates", value: "30th November & 1st December 2026" },
+    { label: "Dates", value: "4th & 5th December" },
     { label: "Venue", value: "School Premises" },
   ],
 };
@@ -108,7 +109,7 @@ export const events: FestEvent[] = [
     name: "ChemQuest - Round 1",
     category: "Competition",
     time: "2nd Half",
-    date: "20th November",
+    date: "28th November",
     preFest: true,
     venue: "School Premises",
     description: "First round of ChemQuest",
@@ -124,6 +125,9 @@ Are you ready to challenge your Chemistry knowledge?
 ### Competition Format:
 - **Round 1:** Written Chemistry Test
 - **Round 2:** PPT-Based Quiz for shortlisted participants
+
+### Last Registration Date: 
+- ** 26th November **
 
 ### Prizes: 
 - Exciting prizes for winners 
@@ -141,7 +145,7 @@ Whether you are a Junior or a Senior, get ready to explore, learn and challenge 
     category: "Competition",
     time: "9:00",
     days: [1],
-    date: "30th November",
+    date: "4th December",
     venue: "Juniors - Ground Floors | Seniors - Chemistry Lab",
     description: "Second round of ChemQuest",
     details: `
@@ -185,7 +189,7 @@ Are you ready to bring Chemistry to life through your creativity?
 - Posters will be evaluated on creativity, scientific accuracy, presentation and overall visual appeal.
 
 ### Last Submition Date: 
-- 25th November
+- 30th November
 
 ### Prizes: 
 - Exciting prizes for winners 
@@ -203,7 +207,7 @@ Unleash your imagination, put your scientific ideas on paper and show everyone h
     venue: "MP Hall",
     time: "10:30",
     days: [1],
-    date: "30th November",
+    date: "4th December",
     description: "Create a presentation related to Chemistry",
     details: `
 Have an idea worth presenting? It's time to let your knowledge speak!
@@ -218,7 +222,7 @@ Have an idea worth presenting? It's time to let your knowledge speak!
 - Presentations will be evaluated on content, scientific accuracy, creativity, presentation skills and clarity of explanation.
 
 ### Last Submition Date: 
-- **25th November 2026**
+- **28th November 2026**
 
 ### Prizes: 
 - Exciting prizes for winners 
@@ -238,7 +242,7 @@ Research, create and present your ideas with confidence. Turn complex Chemistry 
     category: "Activity",
     time: "9:00",
     days: [2],
-    date: "1st December",
+    date: "5th December",
     venue: "School Premises",
     registrationInfo: "Register yourself:",
     registrationUrl: "https://forms.gle/Wx74USqY9VVcebNg8",
@@ -268,7 +272,7 @@ Get ready to think fast, act smart and make every second count!
     category: "Competition",
     time: "9:30",
     days: [1],
-    date: "30th November",
+    date: "4th December",
     venue: "Corridor/Chemistry Lab",
     registrationInfo: "Register yourself through following link:",
     registrationUrl: "https://forms.gle/gTuT9gbNstt9JmF89",
@@ -297,7 +301,7 @@ Let your imagination flow, mix creativity with colours and turn the floor into a
     category: "Competition",
     time: "9:30",
     days: [1],
-    date: "30th November",
+    date: "4th December",
     registrationInfo: "Register yourself through following link:",
     registrationUrl: "https://forms.gle/gTuT9gbNstt9JmF89",
     description: "Decorate the Pebble!",
@@ -322,7 +326,7 @@ Pick up a pebble, unleash your creativity and turn something simple into somethi
     category: "Competition",
     time: "10:30",
     days: [2],
-    date: "1st December",
+    date: "5th December",
     venue: "TBA",
     registrationInfo: "Register yourself through the following link:",
     registrationUrl: "https://forms.gle/Ba4k5QQ6t9j1M87H6",
@@ -349,7 +353,7 @@ Put your minds together, crack the codes and race against time. The fastest team
     category: "Activity",
     time: "11:30",
     days: [1],
-    date: "30th November",
+    date: "4th December",
     venue: "School Premises",
     registrationInfo: "Register yourself:",
     registrationUrl: "https://forms.gle/REdU8YnxRxRYxyoy7",
@@ -383,7 +387,7 @@ Get ready to swap the usual classroom roles, team up with your teachers and expe
     category: "Experiment",
     venue: "Small Ground",
     days: [1, 2],
-    date: "30th November & 1st December",
+    date: "4th & 5th December",
     time: "9:00 onwards",
     description: "Watch fun chemistry experiments",
     details: `
@@ -444,8 +448,8 @@ export const contacts = {
     role: "Club President",
     className: "Class XII",
     tier: "leadership",
-    image: "/members/president.jpg",
-    email: "",
+    image: kritiImg,
+    email: "kritikrishnaaaa@gmail.com",
     phone: "",
   } as Person,
 
@@ -530,30 +534,30 @@ export type Announcement = {
 
 export const announcements: Announcement[] = [
   {
-    title: "ChemQuest: Last Date - 18th November(10:00 PM)",
+    title: "ChemQuest: Last Date - 26th November(10:00 PM)",
     description:
-      "All the interested students are requested to register themself for ChemQuest till 18th November 10:00PM",
+      "All the interested students are requested to register themself for ChemQuest till 26th November 10:00PM",
     status: "open",
     category: "Registration",
     eventName: "ChemQuest Round 1",
-    date: "2026-11-17",
+    date: "2026-11-18",
   },
   {
-    title: "Chem-O-Present: Last Date - 23rd November (10:00 PM)",
+    title: "Chem-O-Present: Last Date - 28th November (10:00 PM)",
     description:
-      "All the interested students are requested to submit their PPTs till 23rd November 10:00 PM",
+      "All the interested students are requested to submit their PPTs till 28th November 10:00 PM",
     category: "Registration",
     status: "open",
     eventName: "Chem-O-Present",
-    date: "2026-11-17",
+    date: "2026-11-18",
   },
   {
-    title: "Last Date for Registration - 26th November (10:00 PM)",
+    title: "Last Date for Registration - 2nd December (10:00 PM)",
     description:
       "All the interested sutdents are requested to register themself for the activites they want to participate in till 26th November, 10:00 PM",
     status: "open",
     category: "Registration",
-    date: "2026-11-17",
+    date: "2026-11-18",
   },
 ];
 
