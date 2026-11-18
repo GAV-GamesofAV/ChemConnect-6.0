@@ -23,6 +23,8 @@ import saubhagyaImg from "@/assets/member images/Saubhagya.jpeg";
 import priyanshuImg from "@/assets/member images/Priyanshu.jpeg";
 import ritikImg from "@/assets/member images/ritik.jpeg";
 import gauravImg from "@/assets/member images/Gaurav.jpeg";
+import anamikaImg from "@/assets/member images/Anamika.jpeg";
+import aksharaImg from "@/assets/member images/Akshara.jpeg";
 
 export const club = {
   name: "ChemistRecreate",
@@ -477,11 +479,16 @@ export const contacts = {
       image: ayushImg,
     },
     { name: "Alok", role: "Tech Coordinator", tier: "coordinator", image: alokImg },
-    { name: "Akshra", role: "Decoration and Record Coordinator", tier: "coordinator" },
+    {
+      name: "Akshra",
+      role: "Decoration and Record Coordinator",
+      tier: "coordinator",
+      image: aksharaImg,
+    },
   ] as Person[],
 
   coCoordinators: [
-    { name: "Anamika", role: "Planning Co-coordinator", tier: "co-coordinator" },
+    { name: "Anamika", role: "Planning Co-coordinator", tier: "co-coordinator", image: anamikaImg },
     {
       name: "Prince Rajbhar",
       role: "Event Co-coordinator",
