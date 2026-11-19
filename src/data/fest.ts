@@ -111,7 +111,7 @@ export const events: FestEvent[] = [
     name: "ChemQuest - Round 1",
     category: "Competition",
     time: "2nd Half",
-    date: "28th November",
+    date: "27th November",
     preFest: true,
     venue: "School Premises",
     description: "First round of ChemQuest",
@@ -241,7 +241,7 @@ Research, create and present your ideas with confidence. Turn complex Chemistry 
   },
   {
     name: "Just A Minute",
-    category: "Activity",
+    category: "Competition",
     time: "9:00",
     days: [2],
     date: "5th December",
@@ -352,7 +352,7 @@ Put your minds together, crack the codes and race against time. The fastest team
   },
   {
     name: "Fun In Lab",
-    category: "Activity",
+    category: "Competition",
     time: "11:30",
     days: [1],
     date: "4th December",
@@ -376,14 +376,30 @@ Ever wondered what happens when teachers and students team up in the lab?
 Get ready to swap the usual classroom roles, team up with your teachers and experience Chemistry like never before!
     `,
   },
-  // {
-  //   name:"Chem-O-Rythm",
-  //   category:"Competition",
-  //   days:[2],
-  //   date:"1st December",
-  //   venue: "School Premises",
+  {
+    name: "Chem-O-Rhythm",
+    category: "Competition",
+    venue: "Ground",
+    days: [2],
+    date: "5th December",
+    description: "Can you keep up with the music and your Chemistry knowledge?",
+    details: `
+Can you keep up with the music and your Chemistry knowledge?
 
-  // }
+** CHEM-O-RHYTHM ** is an exciting twist on the classic game of Musical Chairs, where music meets Chemistry! Get ready to groove to the rhythm, stay alert and put your scientific knowledge to the test as you compete in this fun-filled activity combining music, quick thinking and chemistry challenges.
+
+### Open to:
+- **Participants:** Classes 10, 11 & 12
+
+### Competition Format:
+- A Chemistry-themed version of the classic Musical Chairs game
+- Participants move around the chairs while the music plays
+- When the music stops, participants must quickly grab a seat and face a Chemistry-based challenge
+- Participants who successfully complete the challenges move ahead in the competition
+
+Get ready to dance, think fast and put your Chemistry skills to the test! Let the music play and the competition begin!
+    `,
+  },
   {
     name: "Demonstrations",
     category: "Experiment",
